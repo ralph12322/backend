@@ -15,7 +15,12 @@ connectCloudinary();
 
 // middlewares
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'https://lindsaaayspoti.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true // Allows cookies or authentication headers
+}));
+
 
 // initializing routes
 app.use("/api/song", songRouter)
