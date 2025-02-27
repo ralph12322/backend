@@ -21,7 +21,7 @@ connectCloudinary();
 // middlewares
 app.use(express.json());
 app.use(cors({
-    origin: ['https://lindsaaayspoti.vercel.app', 'http://localhost:5174'],
+    origin: ['https://lindsaaayspoti.vercel.app', 'https://spotify-admin-eta.vercel.app'],
     methods: ['GET', 'POST'],
     credentials: true // Allows cookies or authentication headers
 }));
