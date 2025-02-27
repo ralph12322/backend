@@ -20,11 +20,7 @@ connectCloudinary();
 
 // middlewares
 app.use(express.json());
-app.use(cors({
-    origin: 'https://lindsaaayspoti.vercel.app',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true // Allows cookies or authentication headers
-}));
+
 
 app.use(cors());
 
