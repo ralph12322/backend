@@ -15,8 +15,12 @@ connectCloudinary();
 
 // middlewares
 app.use(express.json());
-app.use(cors());
-app.use(cors({ origin: 'https://lindsaaayspoti.vercel.app' }));
+app.use(cors({
+    origin: 'https://lindsaaayspoti.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true // Allows cookies or authentication headers
+}));
+
 
 // initializing routes
 app.use("/api/song", songRouter)
@@ -24,4 +28,4 @@ app.use("/api/album", albumRouter)
 
 app.get('/', (req, res) => res.send("API Working"))
 
-app.listen(port, '0.0.0.0', () => console.log(`Server started on ${port}`))
+app.listen(port, () => console.log(`Server started on ${port}`))
