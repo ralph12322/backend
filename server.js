@@ -26,6 +26,8 @@ app.use(cors({
     credentials: true // Allows cookies or authentication headers
 }));
 
+app.use(cors());
+
 
 // initializing routes
 app.use("/api/song", songRouter)
