@@ -8,7 +8,12 @@ import albumRouter from './src/routes/albumRoute.js';
 
 // app config
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT; // Remove the fallback 4000 or 10000
+if (!port) {
+    console.error("PORT is not set by Render!");
+    process.exit(1);
+}
+
 connectDB();
 connectCloudinary();
 
@@ -28,4 +33,8 @@ app.use("/api/album", albumRouter)
 
 app.get('/', (req, res) => res.send("API Working"))
 
+
 app.listen(port, () => console.log(`Server started on ${port}`))
+
+app.listen(port, '0.0.0.0', () => console.log(`Server started on ${port}`))
+
