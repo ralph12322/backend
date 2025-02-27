@@ -20,9 +20,11 @@ connectCloudinary();
 
 // middlewares
 app.use(express.json());
-
-
-app.use(cors());
+app.use(cors({
+    origin: 'https://lindsaaayspoti.vercel.app',
+    methods: ['GET'],
+    credentials: true // Allows cookies or authentication headers
+}));
 
 
 // initializing routes
