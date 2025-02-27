@@ -22,7 +22,7 @@ connectCloudinary();
 app.use(express.json());
 app.use(cors({
     origin: ['https://lindsaaayspoti.vercel.app', 'http://localhost:5174'],
-    methods: ['GET'],
+    methods: ['GET', 'POST'],
     credentials: true // Allows cookies or authentication headers
 }));
 
